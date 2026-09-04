@@ -1,0 +1,20 @@
+# Cloudflare Pages and EdgeOne read this from the build output. The game pulls
+# ~45 MB of wasm, models and art on first load, none of which is content
+# hashed, so they are cached for a month instead of revalidated every visit.
+/wasm/*
+  Cache-Control: public, max-age=2592000
+
+/models/*
+  Cache-Control: public, max-age=2592000
+
+/audio/*
+  Cache-Control: public, max-age=2592000
+
+/backgrounds/*
+  Cache-Control: public, max-age=2592000
+
+/branding/*
+  Cache-Control: public, max-age=2592000
+
+/ui/*
+  Cache-Control: public, max-age=2592000
